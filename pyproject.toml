@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "bigdata-damg7245-f25"
+version = "0.1.0"
+description = ""
+authors = ["Pemmaraju Venkat Akash Varun <pemmaraju.v@northeastern.edu>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.12"
+camelot-py = "^1.0.9"
+notebook = "^7.4.5"
+pytesseract = "^0.3.13"
+docling = "^2.53.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
