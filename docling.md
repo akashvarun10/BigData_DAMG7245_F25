@@ -22,16 +22,6 @@ pip install docling pandas
 
 ## Usage
 
-### Command Line Interface
-
-```bash
-# Basic usage
-python docling_processor.py input.pdf output_directory
-
-# Example
-python docling_processor.py research_paper.pdf ./extracted_content
-```
-
 ### Python API
 
 ```python
@@ -90,21 +80,3 @@ Exports tables as both CSV and HTML files with proper formatting.
 - pandas>=1.5.0
 - Optional: OCR support via `docling[easyocr]` or `docling[paddle]`
 
-## Performance Notes
-
-- First run downloads AI models (~2.5 minutes initial setup)
-- Subsequent runs use cached models
-- Processing is computationally intensive; GPU recommended for large documents
-- Higher image scales increase processing time but improve quality
-
-## Examples
-
-See `docling_usage_example.py` for detailed usage examples including:
-- Basic single PDF processing
-- Batch processing multiple PDFs
-- Custom resolution settings
-- Error handling patterns
-
-## License
-
-This tool uses the open-source Docling library by IBM Research (MIT License).

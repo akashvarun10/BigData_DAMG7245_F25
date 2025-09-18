@@ -1,16 +1,3 @@
-#!/usr/bin/env python3
-"""
-Docling PDF Processor
-
-A modular tool to process PDF documents and extract:
-- Markdown content
-- Images (figures and table images) to images/ folder  
-- Tables (CSV and HTML) to tables/ folder
-
-Usage:
-    python docling_processor.py input.pdf output_directory
-"""
-
 import logging
 import time
 from pathlib import Path
@@ -251,42 +238,3 @@ def process_pdf(
         "image_stats": image_stats,
         "table_stats": table_stats
     }
-
-
-def main():
-    """Command line interface."""
-    import sys
-    
-    if len(sys.argv) != 3:
-        print("Usage: python docling_processor.py <pdf_path> <output_directory>")
-        print("Example: python docling_processor.py document.pdf ./output")
-        sys.exit(1)
-    
-    pdf_path = sys.argv[1]
-    output_dir = sys.argv[2]
-    
-    try:
-        result = process_pdf(pdf_path, output_dir)
-        print("\n" + "="*50)
-        print("PROCESSING COMPLETE")
-        print("="*50)
-        print(f"PDF: {result['pdf_path']}")
-        print(f"Output: {result['output_dir']}")
-        print(f"Time: {result['processing_time']:.2f}s")
-        
-        if result['markdown_path']:
-            print(f"Markdown: {result['markdown_path']}")
-        
-        if 'table_count' in result['table_stats']:
-            print(f"Tables exported: {result['table_stats']['table_count']}")
-        
-        if 'pictures' in result['image_stats']:
-            print(f"Images exported: {result['image_stats']['pictures'] + result['image_stats']['tables_as_images']}")
-            
-    except Exception as e:
-        print(f"Error: {e}")
-        sys.exit(1)
-
-
-if __name__ == "__main__":
-    main()
