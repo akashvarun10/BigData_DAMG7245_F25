@@ -1,0 +1,22 @@
+[project]
+name = "week3"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Pemmaraju Venkat Akash Varun",email = "pemmaraju.v@northeastern.edu"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "streamlit (>=1.50.0,<2.0.0)",
+    "plotly (>=6.3.0,<7.0.0)",
+    "typer (>=0.19.2,<0.20.0)",
+    "guidance (>=0.3.0,<0.4.0)",
+    "openai (>=1.109.1,<2.0.0)",
+    "python-dotenv (>=1.1.1,<2.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
